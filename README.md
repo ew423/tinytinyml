@@ -11,7 +11,15 @@ As a baseline, I will be using the Lab 4 and 5 lock and real-time job systems to
 
 ## Feedback.
 
-Good luck!
+This can be a rabit hole of complexity! TinyML models do run on the Cortex-M0+ processors, e.g. see the RPi Pico (https://www.arducam.com/product/rp2040-based-arducam-pico4ml-dev-board-for-machine-vision/  ) but that module is significantly more powerful than our board's processor and has a LOT more memory. 
+
+One interesting problems might be to focus on a sensor we already have, e.g. the accelerometer and focus on a small netowrk that can classify different activities / motions based on those inputs. It sounds like you might have some experience with training ML models. If you do, you could get some acceleromter data from the board and send it to a computer via uart. Train a netowrk on the computer, and then run in on the board using the TinyML framework. 
+
+If this is your first forreay into neural networks then I would advise against this project, but if you know neural ntworks and want to see how they work on a small platform, then by all means, this would be a cool project.  
+
+Even if you don't train the network to do anything in particular a study of how big a network you can fit on the chip and run would be interesting. 
+
+
 
 ## Welcome team! Please edit me.
 ### You can use the 'main' branch for you code.
