@@ -1,41 +1,23 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Tiny TinyML by ece3140-sp22</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.coecis.cornell.edu/ece3140-sp22/ew423">View On GitHub</a></li>
-        </nav>
-      </div><!-- end header -->
+    <section class="page-header">
+      <h1 class="project-name">Tiny TinyML</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.coecis.cornell.edu/ece3140-sp22/ew423" class="btn">View on GitHub</a>
+    </section>
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>Tiny TinyML</h1>
-          <p></p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.coecis.cornell.edu/ece3140-sp22">ece3140-sp22</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h2>
+    <section class="main-content">
+      <h2>
 <a id="tiny-tinyml" class="anchor" href="#tiny-tinyml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tiny TinyML</h2>
 <p>An exploration of running Machine Learning algorithms on really, really small computers.</p>
 <p><img src="https://cdn.dribbble.com/users/2424774/screenshots/16962879/media/d0bd0d738aa6d19fc94bcd06866abe3c.png" alt=""></p>
@@ -44,6 +26,7 @@
 <p>The word Machine Learning has certainly captured the imaginations of Computer Science majors and corporate boardrooms alike. It feels like magic - you take a handful of numbers, throw them at a neural network, and suddenly the computer can play chess or identify a flower or do your job better than you. However, it's not as mystical as it seems; the machine learning problem is something we've been doing since middle school Algebra - finding the maximum or minimum of a graph.</p>
 <p><img src="https://useruploads.socratic.org/xfOniEsBT6WHPDxoeTau_quadratic%201.bmp" alt=""></p>
 <p>To learn how to solve a problem, the computer first needs to understand what the problem is. We define these problems in terms of Loss functions - a function that tests out our model and tells us how well (or how poorly) we are doing. For example, if we were trying to define a Loss function for the [Identifying Flowers] problem, we might choose to give our model one point when it correctly tells us what flower we're looking at and zero points otherwise. Then, we try to find some maximum (or minimum) on the Loss function by tweaking the parameters of our model - using the gradient of the Loss function to find the quickest way toward the optimal point we're trying to find.</p>
+<p><img src="https://github.coecis.cornell.edu/ece3140-sp22/ew423/blob/main/images/ece3140%201.jpg?raw=true" alt=""></p>
 <h3>
 <a id="what-about-neural-networks" class="anchor" href="#what-about-neural-networks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What About Neural Networks?</h3>
 <p>It's hard to blame people for liking Neural Networks, what with their strange hidden layers and esoteric activation functions. Largely treated like black boxes, they're remarkably flexible, able to take in almost any dataset and draw some conclusion from them. Many other machine learning algorithms either have stringent requirements for the shape of the dataset - i.e. being in a straight line, being separated by a straight line, etc. - or we are required to know how to transform the data to fit the patterns that the algorithm finds acceptable. The former is often rare in life, while the latter is often hard and requires time and effort. However, the neural network suffers neither of these concerns - which is why they're used in almost every machine learning application to this day.</p>
@@ -56,10 +39,15 @@
 <h3>
 <a id="how-are-you-doing-this" class="anchor" href="#how-are-you-doing-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How Are You Doing This?</h3>
 <p>I plan on using a similar Neural Net architecture on [either MNIST or the accel data, haven't decided yet]. The dataset will be split into chunks, since there isn't enough flash memory to house the whole thing. The model will be trained on these small chunks for a number of steps at a time. Once each 'chunk' is done, the model will be written to flash for storage while the old 'chunk' of training data is removed and a new 'chunk' of data is put into the device. Ideally, the model trained by this method will be able to perform with &gt;50% accuracy.</p>
-      </section>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.coecis.cornell.edu/ece3140-sp22/ew423">Tiny TinyML</a> is maintained by <a href="https://github.coecis.cornell.edu/ece3140-sp22">ece3140-sp22</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
