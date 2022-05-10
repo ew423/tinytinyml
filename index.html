@@ -1,23 +1,41 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<!doctype html>
+<html>
   <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Tiny TinyML by ece3140-sp22</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
   </head>
   <body>
-    <section class="page-header">
-      <h1 class="project-name">Tiny TinyML</h1>
-      <h2 class="project-tagline"></h2>
-      <a href="https://github.coecis.cornell.edu/ece3140-sp22/ew423" class="btn">View on GitHub</a>
-    </section>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.coecis.cornell.edu/ece3140-sp22/ew423">View On GitHub</a></li>
+        </nav>
+      </div><!-- end header -->
 
-    <section class="main-content">
-      <h2>
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>Tiny TinyML</h1>
+          <p></p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.coecis.cornell.edu/ece3140-sp22">ece3140-sp22</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h2>
 <a id="tiny-tinyml" class="anchor" href="#tiny-tinyml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tiny TinyML</h2>
 <p>An exploration of running Machine Learning algorithms on really, really small computers.</p>
 <p><img src="https://cdn.dribbble.com/users/2424774/screenshots/16962879/media/d0bd0d738aa6d19fc94bcd06866abe3c.png" alt=""></p>
@@ -30,24 +48,21 @@
 <h3>
 <a id="what-about-neural-networks" class="anchor" href="#what-about-neural-networks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What About Neural Networks?</h3>
 <p>It's hard to blame people for liking Neural Networks, what with their strange hidden layers and esoteric activation functions. Largely treated like black boxes, they're remarkably flexible, able to take in almost any dataset and draw some conclusion from them. Many other machine learning algorithms either have stringent requirements for the shape of the dataset - i.e. being in a straight line, being separated by a straight line, etc. - or we are required to know how to transform the data to fit the patterns that the algorithm finds acceptable. The former is often rare in life, while the latter is often hard and requires time and effort. However, the neural network suffers neither of these concerns - which is why they're used in almost every machine learning application to this day.</p>
+<p><img src="https://imgs.xkcd.com/comics/trained_a_neural_net_2x.png" alt="What's a Machine Learning blog without XKCD?"></p>
 <p>The neural network achieves such flexibility by being more modular than its linear friends. Think of a neural net like a LEGO Death Star. The individual LEGO blocks don't look like much. Some are long, some are short, some are flat, some are slanted. They're great at modelling rectangular things - the back of an eighteen wheeler, a brick, a train if you try hard enough - but they just don't have the complexity to model the organic, free-flowing shapes we see in the natural world. However, if we combine a bunch of LEGO blocks in the right way, after a lot of time and effort, we've built something a lot cooler. In the case of a neural net, it models a bunch of tiny linear models that can be turned on or off at certain points. As you see in the picture below, as you add more and more linear models, the model we end up with - that the neural net learns - looks an awful lot like the ground truth.</p>
 
 <h3>
 <a id="thats-great-and-all-but-what-does-it-have-to-do-with-small-computers" class="anchor" href="#thats-great-and-all-but-what-does-it-have-to-do-with-small-computers" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>That's Great And All, But What Does It Have To Do With Small Computers?</h3>
 <p>The Achilles' Heel of the fanciest of Machine Learning models is how expensive they are to train. We can teach a computer how to play poker - well enough to consistently beat the best human players out there, actually! - but the only people who have the compute needed to train these models are the research labs of the likes of Facebook and Google (or many of the research labs at Cornell). Even if the select few who have the computer power were kind enough to train models for the rest of us, they only have so many servers and so many hours in a day. A general purpose model trained by Google would be incredible at general purpose tasks, but most use cases for machine learning are not for general purpose tasks. Most of the time, we have one specific thing we want our model to be able to do, whether we want it to recognize our voice when we tell Alexa to buy a new bottle of dish soap or we want it to recognize our faces whether we're wearing glasses or not. In these cases, the models would be running on very small computers. What they learn would also need to be confined to the specific device alone - nobody wants any Joe Schmoe to have access to [The Dummy's Guide to Recognizing [Your Name]'s Face From A Ring Camera]. Hence, the rise of TinyML.</p>
+<p><img src="https://dataprivacymanager.net/wp-content/uploads/2019/10/Data-Privacy-vs.-Data-Security.png" alt=""></p>
 <p>The problem of TinyML is twofold - loading a model on a tiny computer and training a model on a tiny computer. Both require stringent memory management - given the small device size, we must make sure that every byte is used as efficiently as we can. The former task is (from a computer power point of view) generally easier; we can make all the adjustments we need on a PC and give a completed model to the tiny computer. The latter task is more compute intensive - more intermediary math is required to calculate the various losses. This project [is currently aiming to] tackle the latter task, following <a href="https://arxiv.org/abs/2105.14412">a paper published by Hanif Heidari and Andrei A. Velichko</a>.</p>
 <h3>
 <a id="how-are-you-doing-this" class="anchor" href="#how-are-you-doing-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How Are You Doing This?</h3>
 <p>I plan on using a similar Neural Net architecture on [either MNIST or the accel data, haven't decided yet]. The dataset will be split into chunks, since there isn't enough flash memory to house the whole thing. The model will be trained on these small chunks for a number of steps at a time. Once each 'chunk' is done, the model will be written to flash for storage while the old 'chunk' of training data is removed and a new 'chunk' of data is put into the device. Ideally, the model trained by this method will be able to perform with &gt;50% accuracy.</p>
+      </section>
 
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.coecis.cornell.edu/ece3140-sp22/ew423">Tiny TinyML</a> is maintained by <a href="https://github.coecis.cornell.edu/ece3140-sp22">ece3140-sp22</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
   </body>
 </html>
