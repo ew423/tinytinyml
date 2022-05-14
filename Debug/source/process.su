@@ -1,0 +1,6 @@
+C:\Users\evely\Documents\MCUXpressoIDE_11.5.0_7232\workspace\CS3420_Tiny_TinyML\CMSIS/core_cm0plus.h:733:22:__NVIC_EnableIRQ	16	static
+../source/process.c:9:24:pop_from_start_of_linked_list	16	static
+../source/process.c:34:6:add_process_to_queue	24	static
+../source/process.c:62:5:process_create	24	static
+../source/process.c:88:6:process_start	8	static
+../source/process.c:113:16:process_select	24	static

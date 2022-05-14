@@ -1,0 +1,6 @@
+../source/lock.c:6:13:get_next_node	16	static
+../source/lock.c:11:6:add_process_to_lock_queue	24	static
+../source/lock.c:35:13:pop_process_from_lock_queue	24	static
+../source/lock.c:51:6:l_init	16	static
+../source/lock.c:59:6:l_lock	16	static
+../source/lock.c:77:6:l_unlock	24	static
