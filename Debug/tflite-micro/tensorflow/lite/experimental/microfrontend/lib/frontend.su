@@ -1,0 +1,4 @@
+C:\Users\evely\Documents\MCUXpressoIDE_11.5.0_7232\workspace\CS3420_Tiny_TinyML\tflite-micro/tensorflow/lite/experimental/microfrontend/lib/bits.h:32:19:CountLeadingZeros32	16	static
+C:\Users\evely\Documents\MCUXpressoIDE_11.5.0_7232\workspace\CS3420_Tiny_TinyML\tflite-micro/tensorflow/lite/experimental/microfrontend/lib/bits.h:51:19:MostSignificantBit32	16	static
+../tflite-micro/tensorflow/lite/experimental/microfrontend/lib/frontend.c:19:23:FrontendProcessSamples	64	static
+../tflite-micro/tensorflow/lite/experimental/microfrontend/lib/frontend.c:67:6:FrontendReset	16	static

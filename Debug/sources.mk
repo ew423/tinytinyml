@@ -19,5 +19,6 @@ board \
 drivers \
 source \
 startup \
+tflite-micro/tensorflow/lite/experimental/microfrontend/lib \
 utilities \
 

@@ -23,7 +23,7 @@ class DataSetTest(unittest.TestCase):
     
     def test_splitting(self):
         dataset = DataSet(self.harder_x, self.harder_y, self.dummy_percent)
-        self.assertEquals(dataset.train_x[0, 0], 0)
+        self.assertEquals(dataset.train_x[0, 0], 0.0)
         self.assertEquals(dataset.train_x[79, 9], 799)
         self.assertEquals(dataset.train_y[0, 0], 0)
         self.assertEquals(dataset.train_y[79, 0], 79)

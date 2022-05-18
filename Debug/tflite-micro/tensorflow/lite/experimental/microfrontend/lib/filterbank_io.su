@@ -1,0 +1,3 @@
+../tflite-micro/tensorflow/lite/experimental/microfrontend/lib/filterbank_io.c:17:13:PrintArray	32	static
+../tflite-micro/tensorflow/lite/experimental/microfrontend/lib/filterbank_io.c:30:6:FilterbankWriteMemmapPreamble	32	static
+../tflite-micro/tensorflow/lite/experimental/microfrontend/lib/filterbank_io.c:51:6:FilterbankWriteMemmap	24	static

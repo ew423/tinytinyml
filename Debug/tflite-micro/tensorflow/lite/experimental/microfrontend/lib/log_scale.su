@@ -1,0 +1,5 @@
+C:\Users\evely\Documents\MCUXpressoIDE_11.5.0_7232\workspace\CS3420_Tiny_TinyML\tflite-micro/tensorflow/lite/experimental/microfrontend/lib/bits.h:32:19:CountLeadingZeros32	16	static
+C:\Users\evely\Documents\MCUXpressoIDE_11.5.0_7232\workspace\CS3420_Tiny_TinyML\tflite-micro/tensorflow/lite/experimental/microfrontend/lib/bits.h:51:19:MostSignificantBit32	16	static
+../tflite-micro/tensorflow/lite/experimental/microfrontend/lib/log_scale.c:29:17:Log2FractionPart	56	static
+../tflite-micro/tensorflow/lite/experimental/microfrontend/lib/log_scale.c:49:17:Log	64	static
+../tflite-micro/tensorflow/lite/experimental/microfrontend/lib/log_scale.c:60:11:LogScaleApply	48	static

@@ -1,0 +1,2 @@
+../tflite-micro/tensorflow/lite/experimental/microfrontend/lib/fft_io.c:17:6:FftWriteMemmapPreamble	16	static
+../tflite-micro/tensorflow/lite/experimental/microfrontend/lib/fft_io.c:25:6:FftWriteMemmap	24	static
