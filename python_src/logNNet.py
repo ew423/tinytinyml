@@ -15,14 +15,15 @@ from henon import HenonLayerInitializer
 
 def create_LogNNet(A, B, r_1, r_2, r_3, r_4) -> tf.keras.Model:
     model = keras.Sequential()
-    model.add(keras.layers.Dense(25, input_shape=(784, )))
+    model.add(keras.layers.Dense(5, input_shape=(784, )))
     model.add(keras.layers.Dense(10, activation='sigmoid'))
     return model
 
 def create_Henon_LogNNet(A, B, r_1, r_2, r_3, r_4) -> tf.keras.Model:
     henon_weights = HenonLayerInitializer(A, B, r_1, r_2, r_3, r_4)
-    weights = henon_weights((784, 25))
+    weights = henon_weights((784, 5))
     model = keras.Sequential()
-    model.add(keras.layers.Dense(25, input_shape=(784, ), kernel_initializer=tf.constant_initializer(weights)))
+    model.add(keras.layers.Dense(5, input_shape=(784, ), kernel_initializer=tf.constant_initializer(weights)))
     model.add(keras.layers.Dense(10, activation='sigmoid'))
     return model
+

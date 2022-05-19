@@ -30,7 +30,7 @@ logNN_history = standard_logNN.fit(
     data.train_x,
     data.train_y,
     batch_size=25,
-    epochs=5,
+    epochs=40,
     validation_data=(data.val_x, data.val_y)
 )
 print('Henon Results:')
