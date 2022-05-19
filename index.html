@@ -1,43 +1,26 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Tiny TinyML by ece3140-sp22</title>
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-dark.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-    <script src="javascripts/respond.js"></script>
-    <!--[if lt IE 9]>
-      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-    <!--[if lt IE 8]>
-    <link rel="stylesheet" href="stylesheets/ie.css">
-    <![endif]-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-      <div id="header">
-        <nav>
-          <li class="fork"><a href="https://github.coecis.cornell.edu/ece3140-sp22/ew423">View On GitHub</a></li>
-        </nav>
-      </div><!-- end header -->
+    <section class="page-header">
+      <h1 class="project-name">Tiny TinyML</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.coecis.cornell.edu/ece3140-sp22/ew423" class="btn">View on GitHub</a>
+    </section>
 
-    <div class="wrapper">
-
-      <section>
-        <div id="title">
-          <h1>Tiny TinyML</h1>
-          <p></p>
-          <hr>
-          <span class="credits left">Project maintained by <a href="https://github.coecis.cornell.edu/ece3140-sp22">ece3140-sp22</a></span>
-          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
-        </div>
-
-        <h2>
+    <section class="main-content">
+      <h2>
 <a id="tiny-tinyml" class="anchor" href="#tiny-tinyml" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tiny TinyML</h2>
 <p>An exploration of running Machine Learning algorithms on really, really small computers.</p>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/2F63zR00n8c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 <h3>
 <a id="what-is-machine-learning" class="anchor" href="#what-is-machine-learning" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>What is Machine Learning?</h3>
 <p>The word Machine Learning has certainly captured the imaginations of Computer Science majors and corporate boardrooms alike. It feels like magic - you take a handful of numbers, throw them at a neural network, and suddenly the computer can play chess or identify a flower or do your job better than you. However, it's not as mystical as it seems; the machine learning problem is something we've been doing since middle school Algebra - finding the maximum or minimum of a graph.</p>
@@ -87,10 +70,15 @@
 <p>Finally, now that I had the model weights and the data, all I needed to do was write up a quick dot product scheme and plop all three onto the board. It was then that I realized just how problematic storage of a model could be. See, TFLite stores its weights as signed binary values, which are much more storage efficient than the clunky integers I was using. I did not know that TFLite was so considerate until I found that my petite nine kilobyte model had suddenly ballooned into a forty kilobyte monstrosity. Originally, the LogNNet I developed was supposed to have 25 neurons in its hidden layer, the smallest number of neurons Velichko and Heidari had bothered testing. Unfortunately, I found that a 25 x 784 matrix of signed integers was too much for the poor FRDM to handle, as the SDK refused to let me debug my code until it would not stuff the board to the point of breaking (go figure). After several rounds of trial-and-error, I found that a five-neuron net (without any TFLite reductions!) would perform reasonably well on my computer, predicting the correct answer roughly 85% of the time.</p>
 <p>Finally, after repeatedly googling how headers worked and making sure that the memory for each matrix was allocated properly, I was able to get the model to run on the FRDM board. I honestly didn't think that I would get to that point - having been driven half mad by storage issues - but I'm glad it all worked out in the end. Stressful though it was, I enjoyed the project and would like to spend more time on the subject in the future.</p>
 <p><img src="https://cdn.dribbble.com/users/2424774/screenshots/16962879/media/d0bd0d738aa6d19fc94bcd06866abe3c.png" alt=""></p>
-      </section>
 
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.coecis.cornell.edu/ece3140-sp22/ew423">Tiny TinyML</a> is maintained by <a href="https://github.coecis.cornell.edu/ece3140-sp22">ece3140-sp22</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
   </body>
 </html>
